@@ -1,0 +1,11 @@
+name: AbilitySMP
+version: '${project.version}'
+main: trxsh.ontop.abilitysmp.Main
+api-version: 1.19
+depend: [ ProtocolLib ]
+authors: [ trxsh ]
+description: ability smp plugin for lud
+commands:
+  tester:
+    usage: /<command>
+    description: test command
