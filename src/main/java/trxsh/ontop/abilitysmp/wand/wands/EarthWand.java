@@ -1,9 +1,6 @@
 package trxsh.ontop.abilitysmp.wand.wands;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.Sound;
+import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.FallingBlock;
 import org.bukkit.entity.Player;
@@ -12,8 +9,6 @@ import trxsh.ontop.abilitysmp.util.BlockUtility;
 import trxsh.ontop.abilitysmp.wand.Wand;
 import trxsh.ontop.abilitysmp.wand.WandAbility;
 import trxsh.ontop.abilitysmp.wand.WandType;
-
-import java.util.Random;
 
 public class EarthWand extends Wand {
 
@@ -30,7 +25,8 @@ public class EarthWand extends Wand {
 
         if(blockLocation.getBlock() != null) {
             if(blockLocation.getBlock().getType() == Material.AIR) {
-                Bukkit.broadcastMessage("no block to pick up!");
+                player.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "No Block To Pick Up!");
+                player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, .5f);
                 return;
             }
         }

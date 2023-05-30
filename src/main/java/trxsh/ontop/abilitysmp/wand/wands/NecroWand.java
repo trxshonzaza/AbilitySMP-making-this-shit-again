@@ -37,10 +37,8 @@ public class NecroWand extends Wand {
                 if(loc.getBlock() == null || loc.getBlock().getType() == Material.AIR) {
 
                     possibleLocations.add(loc);
-                    Bukkit.broadcastMessage("possible location found to summon zombie: " + loc);
 
-                } else
-                    Bukkit.broadcastMessage("location not possible to spawn zombie: " + loc);
+                }
 
             }
 
@@ -74,20 +72,16 @@ public class NecroWand extends Wand {
                         public void run() {
 
                             for(Zombie zombie : zombies)
-                                zombie.eject();
+                                zombie.remove();
 
                             zombies.clear();
 
                         }
                     }, 20 * 60L);
 
-                    //Bukkit.broadcastMessage("spawned Zombie at " + spawned.getLocation() + ", now attacking " + p.getName());
-
                 }
 
             }
-
-            Bukkit.broadcastMessage("spawned " + zombieCount + " zombies");
 
         }
 

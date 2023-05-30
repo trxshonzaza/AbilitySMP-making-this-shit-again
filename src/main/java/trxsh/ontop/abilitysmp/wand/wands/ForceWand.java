@@ -28,8 +28,6 @@ public class ForceWand extends Wand {
 
         List<Entity> entities = MathUtility.getEntitiesNearby(player, 10);
 
-        Bukkit.broadcastMessage(entities.size() + " entities are nearby");
-
         for(Entity e : entities) {
 
             Location playerLocation = player.getLocation().add(0, .5D, 0);

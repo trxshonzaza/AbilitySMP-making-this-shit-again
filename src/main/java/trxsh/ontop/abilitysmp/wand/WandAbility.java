@@ -11,6 +11,10 @@ public enum WandAbility {
     FORCE,
     EARTH,
     ZEUS,
-    WATER
+    WATER,
+    TELEPORT,
+    DRAGON,
+    WARDEN,
+    SPEED
 
 }

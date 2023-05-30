@@ -1,9 +1,7 @@
 package trxsh.ontop.abilitysmp.util;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.Sound;
+import org.bukkit.*;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -25,7 +23,7 @@ public class MathUtility {
 
         if(players.isEmpty()) {
 
-            Bukkit.broadcastMessage("no players are nearby or you are not looking at a player!");
+            //Bukkit.broadcastMessage("no players are nearby or you are not looking at a player!");
             return false;
 
         }
@@ -38,7 +36,7 @@ public class MathUtility {
 
             if (dot > .50D) {
 
-                Bukkit.broadcastMessage("player was looking at " + p.getName());
+                //Bukkit.broadcastMessage("player was looking at " + p.getName());
                 return true;
 
             }
@@ -59,7 +57,7 @@ public class MathUtility {
 
         if(players.isEmpty()) {
 
-            Bukkit.broadcastMessage("no players are nearby or you are not looking at a player!");
+            //Bukkit.broadcastMessage("no players are nearby or you are not looking at a player!");
             return null;
 
         }
@@ -72,7 +70,7 @@ public class MathUtility {
 
             if (dot > .50D) {
 
-                Bukkit.broadcastMessage("player was looking at " + p.getName());
+                //Bukkit.broadcastMessage("player was looking at " + p.getName());
                 return p;
 
             }
@@ -123,7 +121,7 @@ public class MathUtility {
 
         if(entities.isEmpty()) {
 
-            Bukkit.broadcastMessage("no entities are nearby or you are not looking at a entity!");
+            //Bukkit.broadcastMessage("no entities are nearby or you are not looking at a entity!");
             return false;
 
         }
@@ -136,7 +134,7 @@ public class MathUtility {
 
             if (dot > .50D) {
 
-                Bukkit.broadcastMessage("player was looking at " + e.getName());
+                //Bukkit.broadcastMessage("player was looking at " + e.getName());
                 return true;
 
             }
@@ -182,7 +180,7 @@ public class MathUtility {
 
         if(entities.isEmpty()) {
 
-            Bukkit.broadcastMessage("no entities are nearby or you are not looking at a entity!");
+            //Bukkit.broadcastMessage("no entities are nearby or you are not looking at a entity!");
             return null;
 
         }
@@ -195,7 +193,7 @@ public class MathUtility {
 
             if (dot > .50D) {
 
-                Bukkit.broadcastMessage("player was looking at " + e.getName());
+                //Bukkit.broadcastMessage("player was looking at " + e.getName());
                 return e;
 
             }
@@ -203,6 +201,28 @@ public class MathUtility {
         }
 
         return null;
+
+    }
+
+    public static Block getSolidBlockLookingAt(Player pl, int radius) {
+
+        Block b = pl.getTargetBlock(null, radius);
+
+        if(b == null || b.getType() == Material.AIR)
+            return null;
+        else
+            return b;
+
+    }
+
+    public static Block getBlockLookingAt(Player pl, int radius) {
+
+        Block b = pl.getTargetBlock(null, radius);
+
+        if(b == null)
+            return null;
+        else
+            return b;
 
     }
 

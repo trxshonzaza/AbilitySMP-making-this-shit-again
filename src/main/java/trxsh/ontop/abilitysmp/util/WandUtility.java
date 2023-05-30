@@ -38,4 +38,20 @@ public class WandUtility {
 
     }
 
+    public static Wand getWandByKey(String key) {
+
+        for(Wand w : WandData.wands) {
+
+            if(w.key.equalsIgnoreCase(key)) {
+
+                return w;
+
+            }
+
+        }
+
+        return null;
+
+    }
+
 }

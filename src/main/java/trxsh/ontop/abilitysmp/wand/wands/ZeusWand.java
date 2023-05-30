@@ -6,6 +6,7 @@ import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.LightningStrike;
 import org.bukkit.entity.Player;
+import trxsh.ontop.abilitysmp.util.MathUtility;
 import trxsh.ontop.abilitysmp.wand.Wand;
 import trxsh.ontop.abilitysmp.wand.WandAbility;
 import trxsh.ontop.abilitysmp.wand.WandType;
@@ -28,9 +29,9 @@ public class ZeusWand extends Wand {
 
         } else {
 
-            Block b = player.getTargetBlock(null, 20);
+            Block b = MathUtility.getSolidBlockLookingAt(player, 20);
 
-            if(b.getType() == Material.AIR)
+            if(b == null)
                 return;
 
             LightningStrike strike = player.getWorld().strikeLightning(b.getLocation());

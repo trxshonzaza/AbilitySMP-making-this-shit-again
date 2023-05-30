@@ -1,6 +1,7 @@
 package trxsh.ontop.abilitysmp.listener;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.FallingBlock;
@@ -10,6 +11,8 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.ItemSpawnEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import trxsh.ontop.abilitysmp.Main;
+import trxsh.ontop.abilitysmp.manager.CooldownManager;
 import trxsh.ontop.abilitysmp.wand.Wand;
 import trxsh.ontop.abilitysmp.util.WandUtility;
 
@@ -24,15 +27,37 @@ public class ItemListener implements Listener {
 
             try {
 
+                if(CooldownManager.isIdInList(e.getPlayer().getUniqueId())) {
+
+                    e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, .5f);
+                    e.getPlayer().sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "Your Wand Ability Is On Cooldown!");
+
+                    return;
+
+                }
+
                 ItemStack stack = e.getItem();
+
+                if(stack == null)
+                    return;
 
                 Wand wand = WandUtility.getWandByItem(stack);
 
-                Bukkit.broadcastMessage("wand is " + wand.name);
+                if(wand == null)
+                    return;
+
+                Bukkit.getScheduler().runTaskLater(Main.Instance, new Runnable() {
+                    @Override
+                    public void run() {
+                        CooldownManager.addIdToList(e.getPlayer().getUniqueId());
+                    }
+                }, 5);
+
+               //Bukkit.broadcastMessage("wand is " + wand.name);
 
                 wand.doAbility(e.getPlayer());
 
-            }catch(Exception e1){ }
+            }catch(Exception e1) { }
 
         }
 
@@ -51,7 +76,7 @@ public class ItemListener implements Listener {
                     e.getEntity().getWorld().createExplosion(e.getLocation(), 3f);
                     e.getEntity().getWorld().playSound(e.getLocation(), Sound.ENTITY_GENERIC_EXPLODE, 1f, 1f);
 
-                    e.getEntity().eject();
+                    e.getEntity().remove();
 
                 }
 

@@ -7,9 +7,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityTargetEvent;
 
-import java.util.HashMap;
-import java.util.List;
-
 public class MobListener implements Listener {
 
     @EventHandler
@@ -19,7 +16,10 @@ public class MobListener implements Listener {
 
             Zombie zombie = (Zombie) e.getEntity();
 
-            if(zombie.getCustomName().contains("'s") || zombie.getCustomName() != null) {
+            if(zombie.getCustomName() == null)
+                return;
+
+            if(zombie.getCustomName().contains("'s")) {
 
                 String playerName = zombie.getCustomName().split("'s")[0];
 

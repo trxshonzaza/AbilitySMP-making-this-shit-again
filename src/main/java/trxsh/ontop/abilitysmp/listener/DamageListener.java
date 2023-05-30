@@ -28,6 +28,9 @@ public class DamageListener implements Listener {
 
             skull = (WitherSkull)e.getDamager();
 
+            if(skull.getCustomName() == null)
+                return;
+
             if(skull.getCustomName().equalsIgnoreCase("TrxshWither"))
                 le.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 20 * 10, 1));
 
@@ -36,6 +39,9 @@ public class DamageListener implements Listener {
             LightningStrike strike = (LightningStrike) e.getDamager();
 
             strike = (LightningStrike) e.getDamager();
+
+            if(strike.getCustomName() == null)
+                return;
 
             if(strike.getCustomName().equalsIgnoreCase("TrxshLightning"))
                 le.damage(2);

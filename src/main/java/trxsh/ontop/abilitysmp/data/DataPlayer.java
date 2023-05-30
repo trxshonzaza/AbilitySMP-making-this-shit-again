@@ -5,6 +5,7 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
+@Deprecated
 public class DataPlayer {
 
     public static DataPlayer instance;

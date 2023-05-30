@@ -63,7 +63,7 @@ public class WandData {
         ));
         wands.add(new ZeusWand(
                 "Wand of The God Zeus",
-                "earth",
+                "lightning",
                 WandAbility.ZEUS,
                 WandType.AGGRESSIVE
         ));
@@ -71,6 +71,30 @@ public class WandData {
                 "Wand of Water",
                 "water",
                 WandAbility.WATER,
+                WandType.PASSIVE
+        ));
+        wands.add(new TeleportWand(
+                "Wand of The Endermen",
+                "teleport",
+                WandAbility.TELEPORT,
+                WandType.PASSIVE
+        ));
+        wands.add(new DragonWand(
+                "Wand of The Dragons",
+                "dragon",
+                WandAbility.DRAGON,
+                WandType.AGGRESSIVE
+        ));
+        wands.add(new WardenWand(
+                "Wand of The Warden",
+                "warden",
+                WandAbility.WARDEN,
+                WandType.AGGRESSIVE
+        ));
+        wands.add(new SpeedWand(
+                "Wand of Acrobatics",
+                "speed",
+                WandAbility.SPEED,
                 WandType.PASSIVE
         ));
 

@@ -7,6 +7,7 @@ import trxsh.ontop.abilitysmp.executor.TestExecutor;
 import trxsh.ontop.abilitysmp.listener.*;
 import trxsh.ontop.abilitysmp.manager.PlayerManager;
 import trxsh.ontop.abilitysmp.data.DataPlayer;
+import trxsh.ontop.abilitysmp.recipe.RecipeManager;
 import trxsh.ontop.abilitysmp.util.BlockUtility;
 
 public final class Main extends JavaPlugin {
@@ -24,22 +25,10 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new MobListener(), this);
         Bukkit.getPluginManager().registerEvents(new BlockListener(), this);
         Bukkit.getPluginManager().registerEvents(new DamageListener(), this);
-        //Bukkit.getPluginManager().registerEvents(new InventoryListener(), this);
-
-        for(Player p : Bukkit.getOnlinePlayers()) {
-
-            DataPlayer dp = new DataPlayer(p);
-
-            if(!PlayerManager.dataPlayerExists(dp)) {
-
-                PlayerManager.addDataPlayer(dp);
-
-            }
-
-        }
 
         Instance = this;
 
+        RecipeManager.createRecipes();
         BlockUtility.start();
 
     }

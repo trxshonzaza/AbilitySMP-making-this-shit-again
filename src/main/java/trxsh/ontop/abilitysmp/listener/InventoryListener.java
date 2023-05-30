@@ -8,6 +8,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import trxsh.ontop.abilitysmp.util.SelectInventory;
 
+@Deprecated
 public class InventoryListener implements Listener {
 
     @EventHandler

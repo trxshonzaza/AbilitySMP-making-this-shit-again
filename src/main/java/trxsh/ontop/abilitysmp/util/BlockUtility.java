@@ -45,14 +45,14 @@ public class BlockUtility {
 
                                         if(entity.getName().equalsIgnoreCase(owner)) {
 
-                                            Bukkit.broadcastMessage("entity detected is owner, cancelling");
+                                            //Bukkit.broadcastMessage("entity detected is owner, cancelling");
                                             return;
 
                                         }
 
                                     }
 
-                                Bukkit.broadcastMessage("entity detected near block");
+                                //Bukkit.broadcastMessage("entity detected near block");
 
                                 for(Entity entity : entities)
                                     if(entity instanceof LivingEntity)

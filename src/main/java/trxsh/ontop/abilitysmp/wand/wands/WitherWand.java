@@ -1,5 +1,6 @@
 package trxsh.ontop.abilitysmp.wand.wands;
 
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.WitherSkull;
 import trxsh.ontop.abilitysmp.wand.Wand;
@@ -15,7 +16,9 @@ public class WitherWand extends Wand {
     @Override
     public void doAbility(Player player) {
 
-        WitherSkull skull = (WitherSkull)player.launchProjectile(WitherSkull.class);
+        player.getWorld().playSound(player.getLocation(), Sound.ENTITY_WITHER_SHOOT, 1f, 1f);
+
+        WitherSkull skull = (WitherSkull) player.launchProjectile(WitherSkull.class);
 
         skull.setShooter(player);
         skull.setBounce(false);
