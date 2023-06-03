@@ -1,6 +1,5 @@
 package trxsh.ontop.abilitysmp.listener;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.World;

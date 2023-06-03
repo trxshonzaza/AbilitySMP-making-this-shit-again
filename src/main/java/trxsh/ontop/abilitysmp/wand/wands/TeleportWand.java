@@ -4,7 +4,6 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
-import org.bukkit.entity.LightningStrike;
 import org.bukkit.entity.Player;
 import trxsh.ontop.abilitysmp.util.MathUtility;
 import trxsh.ontop.abilitysmp.wand.Wand;

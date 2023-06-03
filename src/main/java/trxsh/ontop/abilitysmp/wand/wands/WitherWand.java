@@ -18,7 +18,7 @@ public class WitherWand extends Wand {
 
         player.getWorld().playSound(player.getLocation(), Sound.ENTITY_WITHER_SHOOT, 1f, 1f);
 
-        WitherSkull skull = (WitherSkull) player.launchProjectile(WitherSkull.class);
+        WitherSkull skull = player.launchProjectile(WitherSkull.class);
 
         skull.setShooter(player);
         skull.setBounce(false);

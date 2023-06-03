@@ -1,6 +1,5 @@
 package trxsh.ontop.abilitysmp.listener;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Zombie;
 import org.bukkit.event.EventHandler;
@@ -23,11 +22,8 @@ public class MobListener implements Listener {
 
                 String playerName = zombie.getCustomName().split("'s")[0];
 
-                Bukkit.broadcastMessage(zombie + " creator is " + playerName);
-
                 if(playerName.equals(e.getTarget().getName())) {
 
-                    Bukkit.broadcastMessage("Zombie targeting its creator, cancelling...");
                     e.setCancelled(true);
 
                 } else

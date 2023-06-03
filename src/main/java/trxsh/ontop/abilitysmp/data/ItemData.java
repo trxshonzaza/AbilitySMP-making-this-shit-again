@@ -16,16 +16,16 @@ public class ItemData {
     static {
 
         items.add(new ZombieRemainsItem(
-                "Zombie Remains",
+                ChatColor.GOLD + "Zombie Remains",
                 "zombie_remains",
                 Material.ROTTEN_FLESH,
-                Arrays.asList("Zombie Remains.")
+                Arrays.asList("Zombie Remains.", "Try Crafting With It.")
         ));
         items.add(new SpecialRodItem(
-                ChatColor.AQUA + "Special Rod",
+                ChatColor.AQUA + "" + ChatColor.BOLD + "Special Rod",
                 "special_rod",
                 Material.BLAZE_ROD,
-                Arrays.asList("Something Strange... Try Collecting Unique Items.")
+                Arrays.asList("Something Strange...", "Try Collecting And Crafting Unique Items.")
         ));
 
     }

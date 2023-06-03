@@ -3,7 +3,6 @@ package trxsh.ontop.abilitysmp.wand.wands;
 import org.bukkit.Sound;
 import org.bukkit.entity.DragonFireball;
 import org.bukkit.entity.Player;
-import org.bukkit.entity.WitherSkull;
 import trxsh.ontop.abilitysmp.wand.Wand;
 import trxsh.ontop.abilitysmp.wand.WandAbility;
 import trxsh.ontop.abilitysmp.wand.WandType;
@@ -17,7 +16,7 @@ public class DragonWand extends Wand {
     @Override
     public void doAbility(Player player) {
 
-        DragonFireball fireball = (DragonFireball) player.launchProjectile(DragonFireball.class);
+        DragonFireball fireball = player.launchProjectile(DragonFireball.class);
 
         fireball.setShooter(player);
         fireball.setBounce(false);

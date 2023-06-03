@@ -46,7 +46,6 @@ public class NecroWand extends Wand {
 
         if(!possibleLocations.isEmpty()) {
 
-            int zombieCount = 0;
             List<Zombie> zombies = new ArrayList();
 
             for (Location loc : possibleLocations) {
@@ -64,8 +63,6 @@ public class NecroWand extends Wand {
 
                     spawned.setCustomName(player.getName() + "'s Zombie");
                     spawned.setCustomNameVisible(false);
-
-                    zombieCount++;
 
                     Bukkit.getScheduler().runTaskLater(Main.Instance, new Runnable() {
                         @Override

@@ -1,6 +1,5 @@
 package trxsh.ontop.abilitysmp.wand.wands;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;

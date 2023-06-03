@@ -6,9 +6,7 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
 import trxsh.ontop.abilitysmp.data.ItemData;
-import trxsh.ontop.abilitysmp.data.WandData;
 import trxsh.ontop.abilitysmp.item.CustomItem;
-import trxsh.ontop.abilitysmp.wand.Wand;
 
 public class ItemUtility {
 

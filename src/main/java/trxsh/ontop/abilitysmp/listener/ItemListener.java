@@ -2,6 +2,7 @@ package trxsh.ontop.abilitysmp.listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.FallingBlock;
@@ -27,6 +28,19 @@ public class ItemListener implements Listener {
 
             try {
 
+                ItemStack stack = e.getItem();
+
+                if(stack == null)
+                    return;
+
+                if(stack.getType() == Material.AIR)
+                    return;
+
+                Wand wand = WandUtility.getWandByItem(stack);
+
+                if(wand == null)
+                    return;
+
                 if(CooldownManager.isIdInList(e.getPlayer().getUniqueId())) {
 
                     e.getPlayer().playSound(e.getPlayer().getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, .5f);
@@ -35,16 +49,6 @@ public class ItemListener implements Listener {
                     return;
 
                 }
-
-                ItemStack stack = e.getItem();
-
-                if(stack == null)
-                    return;
-
-                Wand wand = WandUtility.getWandByItem(stack);
-
-                if(wand == null)
-                    return;
 
                 Bukkit.getScheduler().runTaskLater(Main.Instance, new Runnable() {
                     @Override

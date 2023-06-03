@@ -8,6 +8,7 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.potion.PotionType;
 import trxsh.ontop.abilitysmp.Main;
+import trxsh.ontop.abilitysmp.data.RecipeData;
 import trxsh.ontop.abilitysmp.util.ItemUtility;
 import trxsh.ontop.abilitysmp.util.WandUtility;
 
@@ -132,6 +133,17 @@ public class RecipeManager {
         Bukkit.addRecipe(reaperRecipe);
         Bukkit.addRecipe(forceRecipe);
         Bukkit.addRecipe(speedRecipe);
+
+        RecipeData.addRecipe(necroKey);
+        RecipeData.addRecipe(rodKey);
+        RecipeData.addRecipe(enderKey);
+        RecipeData.addRecipe(boostKey);
+        RecipeData.addRecipe(resistanceKey);
+        RecipeData.addRecipe(earthKey);
+        RecipeData.addRecipe(zeusKey);
+        RecipeData.addRecipe(reaperKey);
+        RecipeData.addRecipe(forceKey);
+        RecipeData.addRecipe(speedKey);
 
     }
 

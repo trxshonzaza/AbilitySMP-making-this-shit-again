@@ -6,7 +6,6 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
-import trxsh.ontop.abilitysmp.listener.DeathListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,10 +88,7 @@ public class MathUtility {
             if(e instanceof Player)
                 players.add((Player) e);
 
-        if(!players.isEmpty())
-            return true;
-        else
-            return false;
+        return !players.isEmpty();
 
     }
 
@@ -217,12 +213,7 @@ public class MathUtility {
 
     public static Block getBlockLookingAt(Player pl, int radius) {
 
-        Block b = pl.getTargetBlock(null, radius);
-
-        if(b == null)
-            return null;
-        else
-            return b;
+        return pl.getTargetBlock(null, radius);
 
     }
 

@@ -1,7 +1,6 @@
 package trxsh.ontop.abilitysmp.wand.wands;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.LightningStrike;
